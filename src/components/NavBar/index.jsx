@@ -2,6 +2,7 @@ import React from "react"
 import { FaBars, FaReact } from "react-icons/fa"
 import { HiX } from "react-icons/hi"
 import { Link } from "react-router-dom"
+import "./style.scss"
 const data = [
   { label: "Home", to: "/" },
   { label: "About", to: "/about" },
@@ -14,22 +15,21 @@ const Navbar = () => {
   const [toggleIcon, setToggleIcon] = React.useState(false)
   const handleToggleIcon = () => {
     setToggleIcon(!toggleIcon)
-    const menu = document.querySelector(".navbar__container__menu")
   }
   return (
     <div>
       <nav className="navbar">
         <div className="navbar__container">
           <Link to="/" className="navbar__container__logo">
-            <FaReact size={30} style={{ color: "#61DBFB" }} />
+            <FaReact size={30} />
           </Link>
         </div>
-        <ul className="navbar__container__menu">
+        <ul className={`navbar__container__menu ${toggleIcon ? "active" : ""}`}>
           {data.map((item, index) => (
             <li key={index} className="navbar__container__menu__item">
               <Link
                 to={item.to}
-                className="navbar__container__menu__item__link"
+                className="navbar__container__menu__item__links"
               >
                 {item.label}
               </Link>
