@@ -1,10 +1,15 @@
 import React from "react"
+import "./style.scss"
 
 const Index = () => {
   return (
-    <div style={{ color: "white", fontSize: "4rem", position: "absolute" }}>
-      Home Page
-    </div>
+    <section id="home" className="home">
+      <div className="home__text-wrapper">
+        <h1>
+          Hello, I'm Waheedullah Azizi <br /> Fullstack Developer
+        </h1>
+      </div>
+    </section>
   )
 }
 

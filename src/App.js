@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react"
 import { Route, Routes, useLocation } from "react-router-dom"
 import Particles, { initParticlesEngine } from "@tsparticles/react"
 import { loadFull } from "tsparticles"
+import "./App.scss"
 import Home from "./pages/home"
 import About from "./pages/about"
 import Skills from "./pages/skills"
@@ -40,14 +41,16 @@ const App = () => {
       )}
       <Navbar />
       {/* main page content */}
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/skills" element={<Skills />} />
-        <Route path="/resume" element={<Resume />} />
-        <Route path="/portfolio" element={<Portfolio />} />
-        <Route path="/contact" element={<Contact />} />
-      </Routes>
+      <div className="app__main-page-content">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/skills" element={<Skills />} />
+          <Route path="/resume" element={<Resume />} />
+          <Route path="/portfolio" element={<Portfolio />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+      </div>
     </div>
   )
 }
