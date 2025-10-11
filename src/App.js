@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react"
-import { Route, Routes } from "react-router-dom"
+import { Route, Routes, useLocation } from "react-router-dom"
 import Particles, { initParticlesEngine } from "@tsparticles/react"
 import { loadFull } from "tsparticles"
 import Home from "./pages/home"
@@ -13,6 +13,8 @@ import options from "./utils/particles.js"
 
 const App = () => {
   const [init, setInit] = useState(false)
+  const location = useLocation()
+  const renderParticles = location.pathname === "/"
   useEffect(() => {
     initParticlesEngine(async (engine) => {
       await loadFull(engine)
@@ -23,13 +25,13 @@ const App = () => {
   const particlesLoaded = (container) => {
     // console.log(container);
   }
-  const handleInit = async (main) => {
-    await loadFull(main)
-  }
+  // const handleInit = async (main) => {
+  //   await loadFull(main)
+  // }
   return (
     <div className="app">
       {/* Particles js  */}
-      {init && (
+      {init && renderParticles && (
         <Particles
           id="tsparticles"
           particlesLoaded={particlesLoaded}
