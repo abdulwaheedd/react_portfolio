@@ -23,28 +23,28 @@ const Index = () => {
             >
               <h3 className="skills__content-wrapper__inner-content__category-text">
                 {item.label}
-                <div>
-                  {item.data.map((skillsItem, index) => (
-                    <AnimateKeyframes
-                      play
-                      duration={1}
-                      keyframes={["opacity:1", "opacity:0"]}
-                      iterationCount="1"
-                    >
-                      <div className="progressbar-wrapper" key={index}>
-                        <p>{skillsItem.skillName}</p>
-                        <Line
-                          percent={skillsItem.percentage}
-                          strokeWidth="2"
-                          strokeColor="var(--yellow-theme-main-color)"
-                          trailWidth="2"
-                          strokeLinecap="square"
-                        />
-                      </div>
-                    </AnimateKeyframes>
-                  ))}
-                </div>
               </h3>
+              <div className="skills__content-wrapper__inner-content__progressbar-container">
+                {item.data.map((skillsItem, index) => (
+                  <AnimateKeyframes
+                    play
+                    duration={1}
+                    keyframes={["opacity:1", "opacity:0"]}
+                    iterationCount="1"
+                  >
+                    <div className="progressbar-wrapper" key={index}>
+                      <p>{skillsItem.skillName}</p>
+                      <Line
+                        percent={skillsItem.percentage}
+                        strokeWidth="2"
+                        strokeColor="var(--yellow-theme-main-color)"
+                        trailWidth="2"
+                        strokeLinecap="square"
+                      />
+                    </div>
+                  </AnimateKeyframes>
+                ))}
+              </div>
             </Animate>
           </div>
         ))}
