@@ -5,6 +5,7 @@ import {
   VerticalTimelineElement,
 } from "react-vertical-timeline-component"
 import { MdWork } from "react-icons/md"
+import { FaGraduationCap } from "react-icons/fa"
 import { data } from "./utils"
 import "react-vertical-timeline-component/style.min.css"
 import "./style.scss"
@@ -65,7 +66,7 @@ const Index = () => {
                   border: "1.5px solid var(--yellow-theme-main-color)",
                 }}
                 date="2020 - Present"
-                icon={<MdWork />}
+                icon={<FaGraduationCap />}
                 iconStyle={{
                   background: "var(--yellow-theme-main-color)",
                   color: "#181818",
