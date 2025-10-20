@@ -21,7 +21,7 @@ const Index = () => {
             transform: "translateX(0px)",
           }}
         >
-          <h3 className="contact__content__header-text">Let's Talk</h3>
+          <h3 className="contact__content__header-text">Let's Communicate</h3>
         </Animate>
         <Animate
           play
@@ -58,6 +58,8 @@ const Index = () => {
                   Email
                 </label>
               </div>
+            </div>
+            <div className="contact__content__form__messagewrapper">
               <div>
                 <textarea
                   required
